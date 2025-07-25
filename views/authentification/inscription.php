@@ -61,6 +61,7 @@
                             <option value="Bibliothécaire">Bibliothécaire</option>
                             <option value="Directeur">Directeur</option>
                             <option value="Censeur">Censeur</option>
+                            <option value="Surveillant">Surveillant</option>
                         </select>
                         <label class="" for="role">Fonction</label>
                     </div>
