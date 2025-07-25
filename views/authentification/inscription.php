@@ -76,7 +76,10 @@
                 <label for="email" class="form-label ">Email</label>
                 <input type="email" class="form-control" name="email" id="email">
             </div>
-
+            <div class="mb-3"> 
+                <label for="age" class="form-label ">Age</label>
+                <input type="number" name="age" id="age">
+            </div>
             <div class="row">
                 <div class="col-12 mb-3">
                     <label for="motPasse" class="form-label ">Mot de passe</label>
