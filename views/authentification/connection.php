@@ -21,7 +21,7 @@
     <?php require_once 'message_erreur_inscription.php';?>
     <div class="container">
         <div class="registration-form-container">
-            <form action="/tests/Projet_gestion_des_taches/app/controleurs/control_connection.php" method="POST" class=""  >
+            <form action="/tests/Projet_gestion_bibliotheque/controllers/control_connexion.php" method="POST" class=""  >
             <h2 class="text-center mb-4">Connection</h2>
 
             <div class="mb-3">
@@ -32,7 +32,10 @@
                 <label for="motPasse" class="form-label ">Mot de passe</label>
                 <input type="password" class="form-control" name="motPasse" id="motPasse"> 
             </div>
-            
+            <!-- <button class="btn btn-primary" type="button" id="connection" >
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+            </button> -->
             <button type="submit" class="btn btn-primary col-12" id="connection">Se connecter</button>
         </form>
     </div>
