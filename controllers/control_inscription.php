@@ -90,7 +90,7 @@ if (count($errors) > 0) {
     $stmt->bindParam(':motPasse', $motPasseHache);
     if ($stmt->execute()) {
         http_response_code(201); // Created
-        echo json_encode(['message' => "Inscription réussie, bienvenue $prenom !"]);
+        echo json_encode(['message' => "Inscription réussie, veuillez vous connecter"]);
     } else {
         http_response_code(500); // Internal Server Error
         echo json_encode(['message' => "Erreur lors de l'enregistrement."]);

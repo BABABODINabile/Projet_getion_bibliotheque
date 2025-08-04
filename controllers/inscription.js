@@ -1,7 +1,11 @@
-
+const ch=document.getElementById('chargement');
+const ins=document.getElementById('inscription');
+const con=document.getElementById('connect');
+ch.style.display='none';
+ins.style.display='block';
+con.style.display='none';
 document.querySelector('#loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-
     const nom = document.querySelector('#nom').value.trim();
     const prenom = document.querySelector('#prenom').value.trim();
     const form = document.getElementById('loginForm');
@@ -16,7 +20,9 @@ document.querySelector('#loginForm').addEventListener('submit', async function(e
         document.querySelector('#message').textContent = "Veuillez remplir tous les champs.";
         return;
     }
-
+    ins.style.display='none';
+    ch.style.display='block'; 
+    
     try {
         const response = await fetch('/tests/Projet_gestion_bibliotheque/controllers/control_inscription.php', {
             method: 'POST',
@@ -27,12 +33,25 @@ document.querySelector('#loginForm').addEventListener('submit', async function(e
         });
         const result = await response.json();
         if (!response.ok) {
-            document.querySelector('#message').textContent = result.message;
-            throw new Error(`Erreur serveur: ${response.status}`);
+            setTimeout(() => { 
+                ins.style.display='block';
+                ch.style.display='none';
+                document.querySelector('#message').textContent = result.message;
+                throw new Error(`Erreur serveur: ${response.status}`);
+            },2000);
+            
+            
+            
         }
         else{
+            setTimeout(() => {
+                ch.style.display='none';
+                ins.style.display='none';
+                con.style.display='block';
+
+                document.querySelector('#message').textContent = result.message;
+            }, 2000);
             
-            document.querySelector('#message').textContent = result.message;
         }
         
 

@@ -20,6 +20,11 @@
             border-color:red;
             outline: none;
         }
+        #con{
+            text-decoration: none;
+            color: white;
+
+        }
     </style>
 </head>
 <body>
@@ -98,11 +103,15 @@
                     </div>
                 </div>
             </div>
-            
+            <button class="btn btn-primary" type="button" id="chargement" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Inscription...
+            </button>
             <button type="submit" class="btn btn-primary col-12" id="inscription">Soumettre</button>
+            <button type="button" class="btn btn-success col-12" id="connect"><a href="\tests\Projet_gestion_bibliotheque\views\authentification\connection.php" id="con" >Se connecter</a></button>
             <p class="text-center mt-3">
-                    Déjà un compte ? <a href="connection.php">Connectez-vous ici</a>
-                </p>
+                Déjà un compte ? <a href="connection.php">Connectez-vous ici</a>
+            </p>
         </form>
         <div id="message"></div>
     </div>
