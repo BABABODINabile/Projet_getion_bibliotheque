@@ -28,7 +28,7 @@
 
         // --- 2. Si aucune erreur de validation initiale, procéder à la vérification en base de données ---
         if (empty($errors)) {
-            $sql = "SELECT id, nom, prenom, email,role, motPasse FROM admin WHERE email = :email";
+            $sql = "SELECT id, nom, prenom, email,role,numTel, motPasse FROM admin WHERE email = :email";
 
             if ($stmt = $pdo->prepare($sql)) {
                 $stmt->bindParam(":email", $email, PDO::PARAM_STR);
@@ -46,8 +46,10 @@
                             $_SESSION['logged_in'] = true;
                             $_SESSION['user_id'] = $user['id'];
                             $_SESSION['user_email'] = $user['email'];
-                            $_SESSION['user_name'] = $user['nom'] . ' ' . $user['prenom'];
+                            $_SESSION['user_nom'] = $user['nom'];
+                            $_SESSION['user_prenom']=$user['prenom'];
                             $_SESSION['user_role'] = $user['role'];
+                            $_SESSION['user_tel']=$user['numTel'];
                             // Redirige vers la page principale après succès
                             header("Location:/tests/Projet_gestion_bibliotheque/views/dashboard/principale.php?success=connexion");
                             exit(); // Très important après une redirection
