@@ -27,6 +27,10 @@
             padding-top: 8%;
             padding-bottom: 8%;
         }
+        .badge-soft-success {
+    color: #63ad6f !important;
+    background-color: rgba(99,173,111,.1);
+}
     </style>
     <div id="acceuil" class="section">
              <?php
@@ -52,7 +56,6 @@
                                     <?php
                                         if ($_SESSION['logged_in'] = true) {
                                             echo '<span class="badge badge-soft-success mb-0">Connecté</span>';
-                                            
                                         }
                                     ?>
 									
